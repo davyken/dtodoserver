@@ -6,7 +6,6 @@ import registerValidator from "../utils/registerValidator.js";
 import loginValidator from "../utils/loginValidator.js";
 import auth from "../middleware/auth.js";
 import crypto from "crypto";
-import bcrypt from "bcryptjs";
 import nodemailer from "nodemailer";
 import passport from "passport";
 

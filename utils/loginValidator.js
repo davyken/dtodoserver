@@ -1,6 +1,4 @@
 import joi from 'joi';
-import jwt from 'jsonwebtoken';
-import User from '../models/user.js';
 
 const loginSchema = joi.object({
   email: joi.string().email().required(),
