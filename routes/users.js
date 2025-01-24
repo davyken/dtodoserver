@@ -49,7 +49,7 @@ router.post("/register", registerValidator, async (req, res, next) => {
       to: user.email,
       subject: "Email Verification",
       html: `<h2>Email Verification</h2>
-             <p>Please click the link below to verify your email:</p>
+             <p>To verify your account pleae click the link below:</p>
              <p><a href="${verificationUrl}">Verify Email</a></p>`,
     });
 
@@ -122,7 +122,7 @@ router.post("/resend-verification-code", async (req, res, next) => {
       to: user.email,
       subject: "Email Verification",
       html: `<h2>Email Verification</h2>
-             <p>Please click the link below to verify your email:</p>
+             <p>To verify your account pleae click the link below:</p>
              <p><a href="${verificationUrl}">Verify Email</a></p>`,
     });
 
