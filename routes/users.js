@@ -6,7 +6,6 @@ import registerValidator from "../utils/registerValidator.js";
 import loginValidator from "../utils/loginValidator.js";
 import auth from "../middleware/auth.js";
 import crypto from "crypto";
-import bcrypt from "bcryptjs";
 import nodemailer from "nodemailer";
 import passport from "passport";
 
@@ -43,13 +42,13 @@ router.post("/register", registerValidator, async (req, res, next) => {
 
     await user.save();
 
-    const verificationUrl = `http://localhost:5173/verify-email/${verificationToken}`;
+    const verificationUrl = `https://dtodo-git-main-davykens-projects.vercel.app//verify-email/${verificationToken}`;
 
     await transporter.sendMail({
       to: user.email,
       subject: "Email Verification",
       html: `<h2>Email Verification</h2>
-             <p>Please click the link below to verify your email:</p>
+             <p>To verify your account pleae click the link below:</p>
              <p><a href="${verificationUrl}">Verify Email</a></p>`,
     });
 
@@ -116,13 +115,13 @@ router.post("/resend-verification-code", async (req, res, next) => {
     user.verificationTokenExpires = verificationTokenExpires;
     await user.save();
 
-    const verificationUrl = `http://localhost:5173/verify-email/${verificationToken}`;
+    const verificationUrl = `https://dtodo-git-main-davykens-projects.vercel.app//verify-email/${verificationToken}`;
 
     await transporter.sendMail({
       to: user.email,
       subject: "Email Verification",
       html: `<h2>Email Verification</h2>
-             <p>Please click the link below to verify your email:</p>
+             <p>To verify your account pleae click the link below:</p>
              <p><a href="${verificationUrl}">Verify Email</a></p>`,
     });
 

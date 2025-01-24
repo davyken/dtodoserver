@@ -17,8 +17,8 @@ const sendEmailNotification = async (email, todo) => {
   const mailOptions = {
     from: process.env.EMAIL_USER,
     to: email,
-    subject: 'You have been assigned a new task',
-    text: `You have been assigned a new task: ${todo.title}. View it here: http://localhoost:5000/todos/${todo._id}`,
+    subject: 'A task has been assigned to you',
+    text: `A task has been assigned to you: ${todo.title}. View it here: https://dtodoserver.onrender.com/todos/${todo._id}`,
   };
 
   await transporter.sendMail(mailOptions);

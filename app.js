@@ -1,4 +1,3 @@
-import createError from 'http-errors';  
 import express from 'express';  
 import path from 'path';  
 import cookieParser from 'cookie-parser';  
@@ -6,11 +5,8 @@ import logger from 'morgan';
 import connectDB from './config/dbconfig.js';
 import cors from 'cors';  
 import dotenv from 'dotenv';
-import passport from 'passport';
 import session from 'express-session';
 import initializePassport from './passport-setup.js';
-import fs from 'fs';
-import { fileURLToPath } from 'url';
 
 const app = express();
 
