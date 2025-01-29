@@ -19,15 +19,15 @@ const sendEmailNotification = async (email, todo, type = 'new_task') => {
   switch (type) {
     case 'new_task':
       subject = 'You have been assigned a new task';
-      text = `You have been assigned a new task: ${todo.title}. View it here: http://localhost:5173//todos/${todo._id}`;
+      text = `You have been assigned a new task: ${todo.title}. View it here: https://dtodo-git-main-davykens-projects.vercel.app/todos/${todo._id}`;
       break;
     case 'supervisor_comment':
       subject = 'New supervisor comment on your task';
-      text = `Your supervisor has commented on your task: "${todo.title}". View it here: http://localhost:5173//todos/${todo._id}`;
+      text = `Your supervisor has commented on your task: "${todo.title}". View it here: https://dtodo-git-main-davykens-projects.vercel.app/todos/${todo._id}`;
       break;
     case 'status_update':
       subject = 'Task status updated by supervisor';
-      text = `The status of your task "${todo.title}" has been updated to ${todo.status}. View it here: http://localhost:5173//todos/${todo._id}`;
+      text = `The status of your task "${todo.title}" has been updated to ${todo.status}. View it here: https://dtodo-git-main-davykens-projects.vercel.app/todos/${todo._id}`;
       break;
     default:
       throw new Error('Invalid email notification type');
