@@ -42,7 +42,7 @@ router.post("/register", registerValidator, async (req, res, next) => {
 
     await user.save();
 
-    const verificationUrl = `https://dtodo-git-main-davykens-projects.vercel.app//verify-email/${verificationToken}`;
+    const verificationUrl = `https://dtodo-git-main-davykens-projects.vercel.app/verify-email/${verificationToken}`;
 
     await transporter.sendMail({
       to: user.email,
@@ -115,7 +115,7 @@ router.post("/resend-verification-code", async (req, res, next) => {
     user.verificationTokenExpires = verificationTokenExpires;
     await user.save();
 
-    const verificationUrl = `https://dtodo-git-main-davykens-projects.vercel.app//verify-email/${verificationToken}`;
+    const verificationUrl = `https://dtodo-git-main-davykens-projects.vercel.app/verify-email/${verificationToken}`;
 
     await transporter.sendMail({
       to: user.email,
